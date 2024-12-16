@@ -192,132 +192,193 @@
             <!-- </div> -->
             <section class="site-section">
               <div class="container">
-                  <div class="mb-lg-0 mb-4">
-                      <div class="box-with-humber bg-white p-5 rounded shadow">
-                          <h1>Churn Prediction <span class="typed-words"></span></h1>
-                          <p class="mb-4 text-center">Enter the customer's information in the form below to predict whether they will churn or not.</p>
-                         <form action="/predict" method="post">
+                <div class="mb-lg-0 mb-4">
+                    <div class="box-with-humber bg-white p-5 rounded shadow">
+                        <h1>Churn Prediction <span class="typed-words"></span></h1>
+                        <p class="mb-4 text-center">Enter the customer's information in the form below to predict whether they will churn or not.</p>
+                        <form action="/predict" method="post">
                             <!-- State Dropdown -->
-                            <label for="state">State</label>
-                            <select name="state" id="state" required>
-                                <option value="KS">KS</option>
-                                <option value="OH">OH</option>
-                                <option value="NJ">NJ</option>
-                                <option value="OK">OK</option>
-                                <option value="AL">AL</option>
-                                <option value="MA">MA</option>
-                                <option value="MO">MO</option>
-                                <option value="WV">WV</option>
-                                <option value="RI">RI</option>
-                                <option value="IA">IA</option>
-                                <option value="MT">MT</option>
-                                <option value="ID">ID</option>
-                                <option value="VT">VT</option>
-                                <option value="VA">VA</option>
-                                <option value="TX">TX</option>
-                                <option value="FL">FL</option>
-                                <option value="CO">CO</option>
-                                <option value="AZ">AZ</option>
-                                <option value="NE">NE</option>
-                                <option value="WY">WY</option>
-                                <option value="IL">IL</option>
-                                <option value="NH">NH</option>
-                                <option value="LA">LA</option>
-                                <option value="GA">GA</option>
-                                <option value="AK">AK</option>
-                                <option value="MD">MD</option>
-                                <option value="AR">AR</option>
-                                <option value="WI">WI</option>
-                                <option value="OR">OR</option>
-                                <option value="DE">DE</option>
-                                <option value="IN">IN</option>
-                                <option value="UT">UT</option>
-                                <option value="CA">CA</option>
-                                <option value="SD">SD</option>
-                                <option value="NC">NC</option>
-                                <option value="WA">WA</option>
-                                <option value="MN">MN</option>
-                                <option value="NM">NM</option>
-                                <option value="NV">NV</option>
-                                <option value="DC">DC</option>
-                                <option value="NY">NY</option>
-                                <option value="KY">KY</option>
-                                <option value="ME">ME</option>
-                                <option value="MS">MS</option>
-                                <option value="MI">MI</option>
-                                <option value="SC">SC</option>
-                                <option value="TN">TN</option>
-                                <option value="PA">PA</option>
-                                <option value="HI">HI</option>
-                                <option value="ND">ND</option>
-                                <option value="CT">CT</option>
-                            </select>
-       
-                        <label for="account_length">Account Length :</label>
-                        <input type="number" id="account_length" name="account_length" placeholder="Ex: 128" required>
-                
-                        <label for="area_code">Area Code :</label>
-                        <input type="number" id="area_code" name="area_code" placeholder="Ex: 415" required>
-                        
-                        <label for="international_plan">International Plan</label>
-                        <select id="international_plan" name="international_plan" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                
-                        <label for="voice_mail_plan">Voice Mail Plan (Yes/No) :</label>
-                        <select type="text" id="voice_mail_plan" name="voice_mail_plan" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                        <label for="number_vmail_messages">Number Vmail Messages :</label>
-                        <input type="number" id="number_vmail_messages" name="number_vmail_messages" placeholder="Ex: 25" required>
-                
-                        <label for="total_day_minutes">Total Day Minutes :</label>
-                        <input type="number" step="0.1" id="total_day_minutes" name="total_day_minutes" placeholder="Ex: 265.1" required>
-                
-                        <label for="total_day_calls">Total Day Calls :</label>
-                        <input type="number" id="total_day_calls" name="total_day_calls" placeholder="Ex: 110" required>
-                
-                        <label for="total_day_charge">Total Day Charge :</label>
-                        <input type="number" step="0.01" id="total_day_charge" name="total_day_charge" placeholder="Ex: 45.07" required>
-                
-                        <label for="total_eve_minutes">Total Eve Minutes :</label>
-                        <input type="number" step="0.1" id="total_eve_minutes" name="total_eve_minutes" placeholder="Ex: 197.4" required>
-                
-                        <label for="total_eve_calls">Total Eve Calls :</label>
-                        <input type="number" id="total_eve_calls" name="total_eve_calls" placeholder="Ex: 99" required>
-                
-                        <label for="total_eve_charge">Total Eve Charge :</label>
-                        <input type="number" step="0.01" id="total_eve_charge" name="total_eve_charge" placeholder="Ex: 16.78" required>
-                
-                        <label for="total_night_minutes">Total Night Minutes :</label>
-                        <input type="number" step="0.1" id="total_night_minutes" name="total_night_minutes" placeholder="Ex: 244.7" required>
-                
-                        <label for="total_night_calls">Total Night Calls :</label>
-                        <input type="number" id="total_night_calls" name="total_night_calls" placeholder="Ex: 91" required>
-                
-                        <label for="total_night_charge">Total Night Charge :</label>
-                        <input type="number" step="0.01" id="total_night_charge" name="total_night_charge" placeholder="Ex: 11.01" required>
-                
-                        <label for="total_intl_minutes">Total Intl Minutes :</label>
-                        <input type="number" step="0.1" id="total_intl_minutes" name="total_intl_minutes" placeholder="Ex: 10.0" required>
-                
-                        <label for="total_intl_calls">Total Intl Calls :</label>
-                        <input type="number" id="total_intl_calls" name="total_intl_calls" placeholder="Ex: 3" required>
-                
-                        <label for="total_intl_charge">Total Intl Charge :</label>
-                        <input type="number" step="0.01" id="total_intl_charge" name="total_intl_charge" placeholder="Ex: 2.7" required>
-                
-                        <label for="customer_service_calls">Customer Service Calls :</label>
-                        <input type="number" id="customer_service_calls" name="customer_service_calls" placeholder="Ex: 1" required>
-                
-                        <!-- Bouton de soumission -->
-                        <button type="submit">Prédire</button>
-                    </form>
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <select name="state" id="state" class="form-control" required>
+                                  <option value="KS">KS</option>
+                                  <option value="OH">OH</option>
+                                  <option value="NJ">NJ</option>
+                                  <option value="OK">OK</option>
+                                  <option value="AL">AL</option>
+                                  <option value="MA">MA</option>
+                                  <option value="MO">MO</option>
+                                  <option value="WV">WV</option>
+                                  <option value="RI">RI</option>
+                                  <option value="IA">IA</option>
+                                  <option value="MT">MT</option>
+                                  <option value="ID">ID</option>
+                                  <option value="VT">VT</option>
+                                  <option value="VA">VA</option>
+                                  <option value="TX">TX</option>
+                                  <option value="FL">FL</option>
+                                  <option value="CO">CO</option>
+                                  <option value="AZ">AZ</option>
+                                  <option value="NE">NE</option>
+                                  <option value="WY">WY</option>
+                                  <option value="IL">IL</option>
+                                  <option value="NH">NH</option>
+                                  <option value="LA">LA</option>
+                                  <option value="GA">GA</option>
+                                  <option value="AK">AK</option>
+                                  <option value="MD">MD</option>
+                                  <option value="AR">AR</option>
+                                  <option value="WI">WI</option>
+                                  <option value="OR">OR</option>
+                                  <option value="DE">DE</option>
+                                  <option value="IN">IN</option>
+                                  <option value="UT">UT</option>
+                                  <option value="CA">CA</option>
+                                  <option value="SD">SD</option>
+                                  <option value="NC">NC</option>
+                                  <option value="WA">WA</option>
+                                  <option value="MN">MN</option>
+                                  <option value="NM">NM</option>
+                                  <option value="NV">NV</option>
+                                  <option value="DC">DC</option>
+                                  <option value="NY">NY</option>
+                                  <option value="KY">KY</option>
+                                  <option value="ME">ME</option>
+                                  <option value="MS">MS</option>
+                                  <option value="MI">MI</option>
+                                  <option value="SC">SC</option>
+                                  <option value="TN">TN</option>
+                                  <option value="PA">PA</option>
+                                  <option value="HI">HI</option>
+                                  <option value="ND">ND</option>
+                                  <option value="CT">CT</option>
+  
+                                </select>
+                            </div>
+            
+                            <!-- Account Length -->
+                            <div class="form-group">
+                                <label for="account_length">Account Length:</label>
+                                <input type="number" id="account_length" name="account_length" class="form-control" placeholder="Ex: 128" required>
+                            </div>
+            
+                            <!-- Area Code -->
+                            <div class="form-group">
+                                <label for="area_code">Area Code:</label>
+                                <input type="number" id="area_code" name="area_code" class="form-control" placeholder="Ex: 415" required>
+                            </div>
+            
+                            <!-- International Plan -->
+                            <div class="form-group">
+                                <label for="international_plan">International Plan</label>
+                                <select id="international_plan" name="international_plan" class="form-control" required>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+            
+                            <!-- Voice Mail Plan -->
+                            <div class="form-group">
+                                <label for="voice_mail_plan">Voice Mail Plan (Yes/No):</label>
+                                <select id="voice_mail_plan" name="voice_mail_plan" class="form-control" required>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+            
+                            <!-- Number of Voicemail Messages -->
+                            <div class="form-group">
+                                <label for="number_vmail_messages">Number of Voicemail Messages:</label>
+                                <input type="number" id="number_vmail_messages" name="number_vmail_messages" class="form-control" placeholder="Ex: 25" required>
+                            </div>
+            
+                            <!-- Total Day Minutes -->
+                            <div class="form-group">
+                                <label for="total_day_minutes">Total Day Minutes:</label>
+                                <input type="number" step="0.1" id="total_day_minutes" name="total_day_minutes" class="form-control" placeholder="Ex: 265.1" required>
+                            </div>
+            
+                            <!-- Total Day Calls -->
+                            <div class="form-group">
+                                <label for="total_day_calls">Total Day Calls:</label>
+                                <input type="number" id="total_day_calls" name="total_day_calls" class="form-control" placeholder="Ex: 110" required>
+                            </div>
+            
+                            <!-- Total Day Charge -->
+                            <div class="form-group">
+                                <label for="total_day_charge">Total Day Charge:</label>
+                                <input type="number" step="0.01" id="total_day_charge" name="total_day_charge" class="form-control" placeholder="Ex: 45.07" required>
+                            </div>
+            
+                            <!-- Total Eve Minutes -->
+                            <div class="form-group">
+                                <label for="total_eve_minutes">Total Eve Minutes:</label>
+                                <input type="number" step="0.1" id="total_eve_minutes" name="total_eve_minutes" class="form-control" placeholder="Ex: 197.4" required>
+                            </div>
+            
+                            <!-- Total Eve Calls -->
+                            <div class="form-group">
+                                <label for="total_eve_calls">Total Eve Calls:</label>
+                                <input type="number" id="total_eve_calls" name="total_eve_calls" class="form-control" placeholder="Ex: 99" required>
+                            </div>
+            
+                            <!-- Total Eve Charge -->
+                            <div class="form-group">
+                                <label for="total_eve_charge">Total Eve Charge:</label>
+                                <input type="number" step="0.01" id="total_eve_charge" name="total_eve_charge" class="form-control" placeholder="Ex: 16.78" required>
+                            </div>
+            
+                            <!-- Total Night Minutes -->
+                            <div class="form-group">
+                                <label for="total_night_minutes">Total Night Minutes:</label>
+                                <input type="number" step="0.1" id="total_night_minutes" name="total_night_minutes" class="form-control" placeholder="Ex: 244.7" required>
+                            </div>
+            
+                            <!-- Total Night Calls -->
+                            <div class="form-group">
+                                <label for="total_night_calls">Total Night Calls:</label>
+                                <input type="number" id="total_night_calls" name="total_night_calls" class="form-control" placeholder="Ex: 91" required>
+                            </div>
+            
+                            <!-- Total Night Charge -->
+                            <div class="form-group">
+                                <label for="total_night_charge">Total Night Charge:</label>
+                                <input type="number" step="0.01" id="total_night_charge" name="total_night_charge" class="form-control" placeholder="Ex: 11.01" required>
+                            </div>
+            
+                            <!-- Total International Minutes -->
+                            <div class="form-group">
+                                <label for="total_intl_minutes">Total International Minutes:</label>
+                                <input type="number" step="0.1" id="total_intl_minutes" name="total_intl_minutes" class="form-control" placeholder="Ex: 10.0" required>
+                            </div>
+            
+                            <!-- Total International Calls -->
+                            <div class="form-group">
+                                <label for="total_intl_calls">Total International Calls:</label>
+                                <input type="number" id="total_intl_calls" name="total_intl_calls" class="form-control" placeholder="Ex: 3" required>
+                            </div>
+            
+                            <!-- Total International Charge -->
+                            <div class="form-group">
+                                <label for="total_intl_charge">Total International Charge:</label>
+                                <input type="number" step="0.01" id="total_intl_charge" name="total_intl_charge" class="form-control" placeholder="Ex: 2.7" required>
+                            </div>
+            
+                            <!-- Customer Service Calls -->
+                            <div class="form-group">
+                                <label for="customer_service_calls">Customer Service Calls:</label>
+                                <input type="number" id="customer_service_calls" name="customer_service_calls" class="form-control" placeholder="Ex: 1" required>
+                            </div>
+            
+                            <!-- Submit Button -->
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-primary">Predict</button>
+                            </div>
+                        </form>
                     </div>
-                  </div>
                 </div>
+            </div>
+            
             </section>
 
             
@@ -329,7 +390,7 @@
               <div class="row">
                 <div class="col-md-5">
                   <h2 class="footer-heading mb-4">About Us</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
+                  <p>Our goal is to provide businesses with insightful tools to predict customer churn, enabling proactive strategies to retain valuable clients and improve overall satisfaction.</p>
                 </div>
                 <div class="col-md-3 ml-auto">
                   <h2 class="footer-heading mb-4">Features</h2>
