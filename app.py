@@ -40,22 +40,10 @@ def predict():
         features = [
             state_index,  # Remplacer par l'index de l'état
             convert_yes_no(data['international_plan']),
-            convert_yes_no(data['voice_mail_plan']),
-            float(data['account_length']),
             float(data['area_code']),
-            float(data['number_vmail_messages']),
             float(data['total_day_minutes']),
-            float(data['total_day_calls']),
             float(data['total_day_charge']),
-            float(data['total_eve_minutes']),
-            float(data['total_eve_calls']),
-            float(data['total_eve_charge']),
-            float(data['total_night_minutes']),
-            float(data['total_night_calls']),
-            float(data['total_night_charge']),
-            float(data['total_intl_minutes']),
             float(data['total_intl_calls']),
-            float(data['total_intl_charge']),
             float(data['customer_service_calls']),
         ]
 
