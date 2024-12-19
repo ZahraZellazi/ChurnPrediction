@@ -5,8 +5,8 @@ from flask import Flask, request, jsonify, render_template
 app = Flask(__name__)
 
 # Chargement du modèle et des encodeurs
-model = joblib.load("rf_model.pkl")
-le_state = joblib.load("state_encoder.pkl")  # Charger l'encodeur pour 'state'
+model = joblib.load("ada_model.pkl")
+
 
 # Fonction pour convertir 'Yes'/'No' en 1/0
 def convert_yes_no(value):
@@ -27,23 +27,12 @@ def predict():
         # Vérifiez ce qui est envoyé dans le formulaire
         data = request.form
         print("Form Data:", data)
-
-        if 'state' not in data:
-            raise ValueError("La clé 'state' est manquante dans les données du formulaire.")
-        
-        state_value = data['state']
-        print(f"State Value: {state_value}")  # Affiche la valeur du champ state
-        
-        # Transformer 'state' avec le LabelEncoder
-        state_index = le_state.transform([state_value])[0]  # Utiliser l'encodeur pour 'state'
-        
         features = [
-            state_index,  # Remplacer par l'index de l'état
             convert_yes_no(data['international_plan']),
-            float(data['area_code']),
+            convert_yes_no(data['voice_mail_plan']),
+            float(data['number_vmail_messages']),
             float(data['total_day_minutes']),
             float(data['total_day_charge']),
-            float(data['total_intl_calls']),
             float(data['customer_service_calls']),
         ]
 
